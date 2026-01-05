@@ -103,7 +103,7 @@ This repository shows the final system structure and working implementation.
 
 The architectural decisions, trade-offs, and reasoning behind this solution are documented separately in a companion PDF.
 
-→ Architectural reasoning and trade-offs (PDF)
+→ [Architectural reasoning behind building a flight search system](https://www.justifiedcode.com/flight-search-system/)
 
 ## 📄 License
 
