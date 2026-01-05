@@ -78,17 +78,7 @@ FlightSearch/
 
 4. **Access the application**
    - **API**: http://localhost:49603 (Swagger UI)
-   - **HTML Interface**: http://localhost:49603/flight-search.html or open the html file directly
-
-### Testing with HTML Interface
-
-1. **Open your browser** and navigate to `https://localhost:5001/flight-search.html`
-2. **Use default values** (JFK → LAX, +7 days, 2 passengers) or customize
-3. **Click "Search Flights"** and watch the real-time progress
-4. **Observe the scatter-gather pattern**:
-   - **8-12s**: Amadeus results appear (33% complete)
-   - **15-20s**: Skyscanner results appear (66% complete) 
-   - **25-30s**: Aviationstack results appear (100% complete)
+   - **HTML Interface**: http://localhost:49603/flight-search.html or open the html file directly. Click the Seach Flights and observe the scatter-gather pattern in real-time.
 
 ## Simulation Notes
 
