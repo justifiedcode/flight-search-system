@@ -97,6 +97,5 @@ Feel free to download, study, and use this code as a reference for implementing 
 
 ## Learning Resources
 
-- [AWS Scatter-gather pattern](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/scatter-gather.html)
-
+- [AWS Scatter-Gather Pattern](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/scatter-gather.html)
 
