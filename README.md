@@ -1,4 +1,4 @@
-# Flight Search System — Hexagonal Architecture + Scatter-Gather
+# Flight Search System
 
 A working flight search system built with Hexagonal Architecture and asynchronous processing to aggregate results from multiple providers.
 
