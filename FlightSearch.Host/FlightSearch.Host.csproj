@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Adapters\**" />
+    <Content Remove="Adapters\**" />
+    <EmbeddedResource Remove="Adapters\**" />
+    <None Remove="Adapters\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
+  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FlightSearch.Core\FlightSearch.Core.csproj" />
+    <ProjectReference Include="..\FlightSearch.Adapters.Database\FlightSearch.Adapters.Database.csproj" />
+    <ProjectReference Include="..\FlightSearch.Adapters.SNS\FlightSearch.Adapters.SNS.csproj" />
+    <ProjectReference Include="..\FlightSearch.Adapters.SQS\FlightSearch.Adapters.SQS.csproj" />
+    <ProjectReference Include="..\FlightSearch.Adapters.Amadeus\FlightSearch.Adapters.Amadeus.csproj" />
+    <ProjectReference Include="..\FlightSearch.Adapters.Skyscanner\FlightSearch.Adapters.Skyscanner.csproj" />
+    <ProjectReference Include="..\FlightSearch.Adapters.Aviationstack\FlightSearch.Adapters.Aviationstack.csproj" />
+  </ItemGroup>
+
+</Project>

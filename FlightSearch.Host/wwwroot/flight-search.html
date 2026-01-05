@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✈️ Flight Search - Scatter-Gather Demo</title>
+    <style>
+    * {
+       margin: 0;
+         padding: 0;
+   box-sizing: border-box;
+        }
+
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+   padding: 20px;
+      }
+
+ .container {
+       max-width: 1200px;
+            margin: 0 auto;
+  background: white;
+      border-radius: 20px;
+ box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+       overflow: hidden;
+        }
+
+        .header {
+       background: linear-gradient(45deg, #2196F3, #21CBF3);
+ color: white;
+    padding: 30px;
+     text-align: center;
+    }
+
+    .header h1 {
+     font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+  font-size: 1.1em;
+     opacity: 0.9;
+      }
+
+        .search-section {
+            padding: 40px;
+background: #f8f9fa;
+        }
+
+      .search-form {
+ display: grid;
+         grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  gap: 15px;
+          align-items: end;
+    margin-bottom: 30px;
+      }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+   font-weight: 600;
+     margin-bottom: 8px;
+            color: #333;
+            font-size: 0.9em;
+ }
+
+        .form-group input, .form-group select {
+      padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+font-size: 16px;
+        transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+        outline: none;
+         border-color: #2196F3;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+        }
+
+        .search-btn {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
+          color: white;
+    border: none;
+         padding: 15px 30px;
+  border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+         cursor: pointer;
+  transition: all 0.3s ease;
+       height: fit-content;
+}
+
+        .search-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+      }
+
+.search-btn:disabled {
+            background: #ccc;
+      cursor: not-allowed;
+          transform: none;
+        }
+
+   .status-section {
+      padding: 0 40px 40px;
+        }
+
+ .status-card {
+  background: white;
+            border-radius: 15px;
+            padding: 25px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+        }
+
+        .status-header {
+          display: flex;
+            justify-content: space-between;
+            align-items: center;
+ margin-bottom: 20px;
+        }
+
+  .status-title {
+font-size: 1.3em;
+       font-weight: 600;
+            color: #333;
+        }
+
+        .status-badge {
+            padding: 8px 16px;
+            border-radius: 25px;
+      font-size: 0.9em;
+    font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-initiated { background: #fff3cd; color: #856404; }
+        .status-pending { background: #cce5ff; color: #004085; }
+        .status-completed { background: #d4edda; color: #155724; }
+        .status-timeout { background: #f8d7da; color: #721c24; }
+
+        .progress-bar {
+            background: #e9ecef;
+   border-radius: 10px;
+      overflow: hidden;
+            height: 12px;
+  margin: 15px 0;
+        }
+
+        .progress-fill {
+ background: linear-gradient(90deg, #28a745, #20c997);
+            height: 100%;
+            transition: width 1s ease;
+ border-radius: 10px;
+        }
+
+        .progress-text {
+        text-align: center;
+            margin-top: 5px;
+            font-size: 0.9em;
+  color: #666;
+ }
+
+        .results-grid {
+          display: grid;
+            gap: 15px;
+   }
+
+        .flight-card {
+            background: #fff;
+     border: 2px solid #f1f3f4;
+    border-radius: 12px;
+padding: 20px;
+transition: all 0.3s ease;
+        }
+
+    .flight-card:hover {
+   border-color: #2196F3;
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.1);
+        }
+
+ .flight-header {
+        display: flex;
+            justify-content: space-between;
+   align-items: center;
+          margin-bottom: 15px;
+      }
+
+   .provider-badge {
+   padding: 6px 12px;
+            border-radius: 20px;
+     font-size: 0.8em;
+    font-weight: 600;
+        }
+
+        .provider-amadeus { background: #e3f2fd; color: #1565c0; }
+        .provider-skyscanner { background: #f3e5f5; color: #7b1fa2; }
+        .provider-aviationstack { background: #e8f5e8; color: #388e3c; }
+
+        .flight-price {
+ font-size: 1.5em;
+       font-weight: 700;
+            color: #2e7d32;
+        }
+
+      .flight-details {
+            display: grid;
+  grid-template-columns: 1fr 1fr;
+            gap: 10px;
+    }
+
+        .flight-detail {
+   display: flex;
+            align-items: center;
+     gap: 8px;
+       font-size: 0.9em;
+        }
+
+   .loading-spinner {
+  display: inline-block;
+       width: 20px;
+            height: 20px;
+            border: 2px solid #f3f3f3;
+          border-radius: 50%;
+      border-top-color: #2196F3;
+            animation: spin 1s ease-in-out infinite;
+}
+
+        @keyframes spin {
+         to { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+      @media (max-width: 768px) {
+      .search-form {
+   grid-template-columns: 1fr;
+        }
+     }
+    </style>
+</head>
+<body>
+<div class="container">
+      <div class="header">
+    <h1>✈️ Flight Search</h1>
+          <p>Real-time Scatter-Gather Architecture Demo</p>
+        </div>
+
+        <div class="search-section">
+       <form class="search-form" id="searchForm">
+             <div class="form-group">
+      <label for="origin">✈️ From</label>
+         <input type="text" id="origin" value="JFK" placeholder="Origin Airport" required>
+        </div>
+         
+        <div class="form-group">
+  <label for="destination">🎯 To</label>
+       <input type="text" id="destination" value="LAX" placeholder="Destination Airport" required>
+     </div>
+  
+         <div class="form-group">
+   <label for="departureDate">📅 Departure</label>
+       <input type="date" id="departureDate" required>
+           </div>
+  
+   <div class="form-group">
+        <label for="passengers">👥 Passengers</label>
+        <select id="passengers">
+    <option value="1">1 Passenger</option>
+   <option value="2" selected>2 Passengers</option>
+                 <option value="3">3 Passengers</option>
+ <option value="4">4 Passengers</option>
+        </select>
+      </div>
+    
+          <button type="submit" class="search-btn" id="searchBtn">
+  🔍 Search Flights
+      </button>
+   </form>
+        </div>
+
+        <div class="status-section">
+            <div id="statusCard" class="status-card hidden">
+                <div class="status-header">
+     <div class="status-title">Search Progress</div>
+     <div id="statusBadge" class="status-badge">Searching...</div>
+    </div>
+       
+   <div class="progress-bar">
+       <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+           </div>
+      <div id="progressText" class="progress-text">Initializing search...</div>
+                
+  <div id="searchInfo" style="font-size: 0.9em; color: #666; margin-top: 15px;">
+      <div>Search ID: <span id="searchId">-</span></div>
+          <div>Status: <span id="searchStatus">-</span></div>
+            </div>
+    </div>
+
+            <div id="resultsSection" class="hidden">
+          <h3 style="margin-bottom: 20px; color: #333;">Flight Results</h3>
+        <div id="resultsGrid" class="results-grid"></div>
+            </div>
+   </div>
+    </div>
+
+    <script>
+     // Configuration
+        const API_BASE = 'https://localhost:49602/api/flightsearch';
+     
+        // DOM Elements
+        const searchForm = document.getElementById('searchForm');
+    const searchBtn = document.getElementById('searchBtn');
+     const statusCard = document.getElementById('statusCard');
+        const statusBadge = document.getElementById('statusBadge');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+        const searchId = document.getElementById('searchId');
+const searchStatus = document.getElementById('searchStatus');
+        const resultsSection = document.getElementById('resultsSection');
+        const resultsGrid = document.getElementById('resultsGrid');
+        
+        // State
+   let currentSearchId = null;
+      let statusPolling = null;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+ // Set default departure date to 7 days from now
+   const departureDate = document.getElementById('departureDate');
+   const futureDate = new Date();
+            futureDate.setDate(futureDate.getDate() + 7);
+        departureDate.value = futureDate.toISOString().split('T')[0];
+        });
+   
+        // Search Form Handler
+        searchForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+   const formData = {
+       origin: document.getElementById('origin').value,
+    destination: document.getElementById('destination').value,
+          departureDate: document.getElementById('departureDate').value + 'T00:00:00',
+     passengers: parseInt(document.getElementById('passengers').value)
+};
+            
+            try {
+          searchBtn.disabled = true;
+                searchBtn.innerHTML = '<div class="loading-spinner"></div> Searching...';
+                
+    // Clear previous results
+         resultsSection.classList.add('hidden');
+    resultsGrid.innerHTML = '';
+                
+                const response = await fetch(`${API_BASE}/search`, {
+         method: 'POST',
+     headers: {
+         'Content-Type': 'application/json'
+         },
+  body: JSON.stringify(formData)
+         });
+     
+      if (!response.ok) {
+       throw new Error(`HTTP ${response.status}: ${await response.text()}`);
+       }
+    
+       const result = await response.json();
+       currentSearchId = result.searchId;
+          
+                // Show status card
+   statusCard.classList.remove('hidden');
+          searchId.textContent = currentSearchId.substring(0, 8) + '...';
+         
+        // Start polling for status
+ startStatusPolling();
+     
+ } catch (error) {
+        alert('Search failed: ' + error.message);
+ resetSearchButton();
+            }
+  });
+        
+        // Status Polling
+        function startStatusPolling() {
+            if (statusPolling) clearInterval(statusPolling);
+     
+            statusPolling = setInterval(async () => {
+       try {
+               const response = await fetch(`${API_BASE}/status/${currentSearchId}`);
+     if (!response.ok) return;
+         
+     const status = await response.json();
+                    updateStatus(status);
+
+ if (status.status === 'completed' || status.status === 'timeout') {
+   clearInterval(statusPolling);
+           resetSearchButton();
+        }
+        
+        } catch (error) {
+             console.error('Status polling error:', error);
+         }
+    }, 2000);
+  }
+      
+     // Update Status Display
+      function updateStatus(status) {
+        // Update badge
+      statusBadge.className = `status-badge status-${status.status}`;
+         statusBadge.textContent = status.status.toUpperCase();
+        
+            // Update progress
+            progressFill.style.width = `${status.progress}%`;
+            progressText.textContent = getProgressText(status);
+    
+          // Update status info
+            searchStatus.textContent = status.status;
+      
+       // Update results if any
+         if (status.results && status.results.length > 0) {
+      updateResults(status.results);
+  }
+     }
+ 
+   // Get Progress Text
+        function getProgressText(status) {
+         if (status.status === 'initiated') return 'Initializing search...';
+        if (status.status === 'pending') {
+   const providerCount = new Set(status.results?.map(r => r.provider) || []).size;
+            return `${status.progress}% complete - ${providerCount}/3 providers responded`;
+       }
+         if (status.status === 'completed') return '✅ Search completed successfully!';
+          if (status.status === 'timeout') return '⏱️ Search timed out - showing partial results';
+            return 'Processing...';
+ }
+        
+    // Update Results
+    function updateResults(results) {
+            resultsSection.classList.remove('hidden');
+         
+     // Group by provider to show latest results
+            const providerResults = {};
+    results.forEach(flight => {
+                if (!providerResults[flight.provider]) {
+  providerResults[flight.provider] = [];
+    }
+  providerResults[flight.provider].push(flight);
+            });
+    
+      resultsGrid.innerHTML = '';
+    
+            Object.entries(providerResults).forEach(([provider, flights]) => {
+     flights.forEach(flight => {
+      const flightCard = createFlightCard(flight);
+       resultsGrid.appendChild(flightCard);
+     });
+            });
+        }
+   
+     // Create Flight Card
+        function createFlightCard(flight) {
+            const card = document.createElement('div');
+       card.className = 'flight-card';
+   
+            const providerClass = `provider-${flight.provider.toLowerCase()}`;
+            
+            card.innerHTML = `
+                <div class="flight-header">
+ <div class="provider-badge ${providerClass}">${flight.provider}</div>
+         <div class="flight-price">$${flight.price.toFixed(2)}</div>
+     </div>
+   <div class="flight-details">
+     <div class="flight-detail">
+<span>✈️</span>
+         <span>${flight.flightNumber} - ${flight.airline}</span>
+  </div>
+ <div class="flight-detail">
+  <span>🕒</span>
+       <span>${formatDuration(flight.duration)}</span>
+   </div>
+   <div class="flight-detail">
+          <span>🛫</span>
+             <span>${formatTime(flight.departureTime)}</span>
+      </div>
+         <div class="flight-detail">
+      <span>🛬</span>
+          <span>${formatTime(flight.arrivalTime)}</span>
+               </div>
+      <div class="flight-detail">
+      <span>📍</span>
+ <span>${flight.origin} → ${flight.destination}</span>
+     </div>
+       <div class="flight-detail">
+     <span>🔄</span>
+ <span>${flight.stops} stop${flight.stops !== 1 ? 's' : ''}</span>
+   </div>
+</div>
+            `;
+            
+            return card;
+        }
+        
+        // Utility Functions
+        function formatTime(dateString) {
+     return new Date(dateString).toLocaleTimeString('en-US', {
+    hour: '2-digit',
+      minute: '2-digit',
+       hour12: true
+     });
+        }
+        
+        function formatDuration(minutes) {
+        const hours = Math.floor(minutes / 60);
+         const mins = minutes % 60;
+            return `${hours}h ${mins}m`;
+        }
+        
+   function resetSearchButton() {
+            searchBtn.disabled = false;
+            searchBtn.innerHTML = '🔍 Search Flights';
+      }
+    </script>
+</body>
+</html>
