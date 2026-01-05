@@ -16,12 +16,9 @@ The system:
 
 This project follows a Hexagonal Architecture structure with clear separation of concerns.
 
-```
-[System structure showing ports, adapters, and async message flow]
-```
+<img width="2003" height="1918" alt="hexagonal_architecture" src="https://github.com/user-attachments/assets/e427f2f5-933f-4459-b646-671f5d896e1f" />
 
-This repository focuses on the final solution and structure. 
-Architectural decisions, and trade-offs are documented separately.
+This repository focuses on the final solution and structure. Architectural reasoning is documented separately.
 
 ### Core Components
 
