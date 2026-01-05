@@ -77,8 +77,8 @@ FlightSearch/
    ```
 
 4. **Access the application**
-   - **API**: https://localhost:5001 (Swagger UI)
-   - **HTML Interface**: https://localhost:5001/flight-search.html or open the html file directly
+   - **API**: https://localhost:49603 (Swagger UI)
+   - **HTML Interface**: https://localhost:49603/flight-search.html or open the html file directly
 
 ### Testing with HTML Interface
 
