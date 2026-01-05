@@ -25,7 +25,7 @@ This project follows a Hexagonal Architecture structure with clear separation of
 - **Adapters**: Infrastructure implementations that plug into ports
 - **Host**: Composition root that wires everything together
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 FlightSearch/
