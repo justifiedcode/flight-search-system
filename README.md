@@ -40,7 +40,7 @@ FlightSearch/
 ├── FlightSearch.Host/    # 🏠 Composition Root & Web API
 │   ├── Controllers/       # HTTP driving adapters
 │   ├── Services/   # Background driving adapters
-│ └── wwwroot/flight-search.html      # HTML test interface
+│   └── wwwroot/flight-search.html      # HTML test interface
 ├── FlightSearch.Adapters.Database/        # 💾 Database driven adapter
 ├── FlightSearch.Adapters.SNS/       # 📡 Message dispatch adapter
 ├── FlightSearch.Adapters.SQS/  # 📥 Message response adapter
