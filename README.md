@@ -89,7 +89,7 @@ Response delays and failure rates can be configured in appsettings.json.
 
 This repository shows the code structure and working implementation. The architectural reasoning behind this solution is documented in a separate PDF.
 
-→ [Architectural Reasoning](https://www.justifiedcode.com/flight-search-system/)
+→ [Architectural Reasoning Behind Building a Flight Search System](https://www.justifiedcode.com/flight-search-system/)
 
 ## Use This Code
 
