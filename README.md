@@ -2,7 +2,7 @@
 
 A working flight search system built with Hexagonal Architecture and asynchronous processing to aggregate results from multiple providers.
 
-## 🎯 Problem
+## The Problem
 
 Users search for flights across multiple providers.
 Each provider responds at different times and may fail independently.
@@ -12,7 +12,7 @@ The system:
 - collects responses asynchronously
 - returns progressive results to the client
 
-## 🏗️ High-Level Structure
+## High-Level Structure
 
 This project follows a Hexagonal Architecture structure with clear separation of concerns.
 
@@ -51,7 +51,7 @@ FlightSearch/
 └── FlightSearch.Adapters.Aviationstack/   # 🛫 Aviationstack provider adapter
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -92,27 +92,23 @@ FlightSearch/
    - **15-20s**: Skyscanner results appear (66% complete) 
    - **25-30s**: Aviationstack results appear (100% complete)
 
-## 🧪 Simulation Notes
+## Simulation Notes
 
 All flight providers are simulated.
 Response delays and failure rates can be configured in appsettings.json.
 
 ## Architectural Reasoning
 
-This repository shows the final system structure and working implementation.
-
-The architectural decisions, trade-offs, and reasoning behind this solution are documented separately in a companion PDF.
+This repository shows the code structure and working implementation. The architectural reasoning behind this solution is documented separately in a companion PDF.
 
 → [Architectural reasoning behind building a flight search system](https://www.justifiedcode.com/flight-search-system/)
 
-## 📄 License
+## Use This Code
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Feel free to download, study, and use this code as a reference for implementing a flight search system.
 
-**Copyright (c) 2026 [Justifide Code, LLC]**
+## Learning Resources
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+- [AWS Scatter-gather pattern](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/scatter-gather.html)
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
