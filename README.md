@@ -78,7 +78,7 @@ FlightSearch/
 
 4. **Access the application**
    - **API**: http://localhost:49603 (Swagger UI)
-   - **HTML Interface**: http://localhost:49603/flight-search.html or open the html file directly. Click the Seach Flights and observe the scatter-gather pattern in real-time.
+   - **HTML Interface**: http://localhost:49603/flight-search.html or open the html file directly. Click the "Seach Flights" and watch the real-time progress.
 
 ## Simulation Notes
 
