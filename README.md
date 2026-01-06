@@ -1,6 +1,6 @@
 # Flight Search System
 
-A working flight search system implementing a combination of proven design patterns including Scatter-Gather, Correlation ID, and Aggregator patterns within the hexagonal architecture pattern boundary.
+A working flight search system implementing a combination of design patterns including Scatter-Gather, Correlation ID, and Aggregator patterns within the hexagonal architecture pattern boundary.
 
 ## The Problem
 
