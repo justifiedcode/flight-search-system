@@ -20,14 +20,6 @@ Users see results as soon as the first provider responds. Waiting for all source
 <br><br>
 <img width="1462" height="813" alt="flight_search_1" src="https://github.com/user-attachments/assets/5dbedec8-3a11-412c-9d44-30706aacdd0e" />
 
-
-### Core Components
-
-- **Domain Core**: Pure business logic with zero infrastructure dependencies
-- **Ports**: Interfaces that define contracts (Incoming & Outgoing)
-- **Adapters**: Infrastructure implementations that plug into ports
-- **Host**: Composition root that wires everything together
-
 ## Project Structure
 
 ```
