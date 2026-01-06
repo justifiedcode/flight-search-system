@@ -12,11 +12,14 @@ The system:
 - collects responses asynchronously
 - returns progressive results to the client
 
-## High-Level Structure
+## User Interface
 
-This project follows a Hexagonal Architecture structure with clear separation of concerns.
+Users see results as soon as the first provider responds. Waiting for all sources is unacceptable.
 
-<img width="2003" height="1918" alt="hexagonal_architecture" src="https://github.com/user-attachments/assets/e427f2f5-933f-4459-b646-671f5d896e1f" />
+<img width="1516" height="780" alt="flight_search_0" src="https://github.com/user-attachments/assets/332de906-ea88-40c5-a668-34aded958ea0" />  
+<br><br>
+<img width="1462" height="813" alt="flight_search_1" src="https://github.com/user-attachments/assets/5dbedec8-3a11-412c-9d44-30706aacdd0e" />
+
 
 ### Core Components
 
