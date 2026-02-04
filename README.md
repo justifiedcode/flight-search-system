@@ -24,24 +24,24 @@ Users see results as soon as the first provider responds. Waiting for all source
 
 ```
 FlightSearch/
-├── FlightSearch.Core/     # 🔵 Domain & Application Core
+├── FlightSearch.Core/    
 │   ├── Domain/          # Business entities and aggregates
-│   └── Application/      # Use cases and ports
+│   └── Application/      
 │       ├── DataSets/      # Data transfer objects
 │       ├── Ports/
 │       │   ├── Incoming/   # Primary ports (driving)
 │       │   └── Outgoing/   # Secondary ports (driven)
 │       └── UseCases/  # Application services
-├── FlightSearch.Host/    # 🏠 Composition Root & Web API
-│   ├── Controllers/       # HTTP driving adapters
-│   ├── Services/   # Background driving adapters
+├── FlightSearch.Host/ 
+│   ├── Controllers/       # HTTP endpoints
+│   ├── Services/   # Worker services
 │   └── wwwroot/flight-search.html      # HTML test interface
-├── FlightSearch.Adapters.Database/        # 💾 Database driven adapter
-├── FlightSearch.Adapters.SNS/       # 📡 Message dispatch adapter
-├── FlightSearch.Adapters.SQS/  # 📥 Message response adapter
-├── FlightSearch.Adapters.Amadeus/         # 🛩️ Amadeus provider adapter
-├── FlightSearch.Adapters.Skyscanner/      # ✈️ Skyscanner provider adapter
-└── FlightSearch.Adapters.Aviationstack/   # 🛫 Aviationstack provider adapter
+├── FlightSearch.Adapters.Database/        # Database adapter
+├── FlightSearch.Adapters.SNS/       # Message dispatch adapter
+├── FlightSearch.Adapters.SQS/  # Message response adapter
+├── FlightSearch.Adapters.Amadeus/         # Amadeus provider adapter
+├── FlightSearch.Adapters.Skyscanner/      # Skyscanner provider adapter
+└── FlightSearch.Adapters.Aviationstack/   # Aviationstack provider adapter
 ```
 
 ## Quick Start
