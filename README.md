@@ -20,29 +20,11 @@ Users see results as soon as the first provider responds. Waiting for all source
 <br><br>
 <img width="1462" height="813" alt="flight_search_1" src="https://github.com/user-attachments/assets/5dbedec8-3a11-412c-9d44-30706aacdd0e" />
 
-## Project Structure
+## Hexagonal Architecture
 
-```
-FlightSearch/
-├── FlightSearch.Core/    
-│   ├── Domain/          # Business entities and aggregates
-│   └── Application/      
-│       ├── DataSets/      # Data transfer objects
-│       ├── Ports/
-│       │   ├── Incoming/   # Primary ports (driving)
-│       │   └── Outgoing/   # Secondary ports (driven)
-│       └── UseCases/  # Application services
-├── FlightSearch.Host/ 
-│   ├── Controllers/       # HTTP endpoints
-│   ├── Services/   # Worker services
-│   └── wwwroot/flight-search.html      # HTML test interface
-├── FlightSearch.Adapters.Database/        # Database adapter
-├── FlightSearch.Adapters.SNS/       # Message dispatch adapter
-├── FlightSearch.Adapters.SQS/  # Message response adapter
-├── FlightSearch.Adapters.Amadeus/         # Amadeus provider adapter
-├── FlightSearch.Adapters.Skyscanner/      # Skyscanner provider adapter
-└── FlightSearch.Adapters.Aviationstack/   # Aviationstack provider adapter
-```
+All elements coordinate under the strict discipline of a proven architectural pattern.
+
+<img width="2003" height="1918" alt="hexagonal_architecture" src="https://github.com/user-attachments/assets/34c971a3-2dd5-4b7f-85ce-3a01a01fd5c0" />
 
 ## Quick Start
 
